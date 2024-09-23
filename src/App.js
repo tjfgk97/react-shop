@@ -4,8 +4,15 @@ import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap';
 import woman from './images/woman.webp';
 import next from './images/thxnext.jpg';
 import rem from './images/rem.webp';
+import { useState } from 'react';
+import data from './data.js';
 
 function App() {
+
+  let [perfume] = useState(data)
+
+
+
   return (
     <div className="App">
       <Navbar bg="light" data-bs-theme="light">
@@ -23,21 +30,23 @@ function App() {
           <Row>
             <Col sm>
               <img src={woman} width="80%" />
-              <h6>아리아나 그란데</h6>
-              <p>갓 이즈 어 우먼 EDP 50ML</p>
+              <h6>{perfume[0].title}</h6>
+              <p>{perfume[0].price}</p>
             </Col>
             <Col sm>
               <img src={next} width="127%" />
-              <h6>아리아나 그란데</h6>
-              <p>땡큐 넥스트 2.0 오 드 퍼퓸 30ML</p>
+              <h6>{perfume[1].title}</h6>
+              <p>{perfume[1].price}</p>
             </Col>
             <Col sm>
               <img src={rem} width="127%" />
-              <h6>아리아나 그란데</h6>
-              <p>알이엠 오 드 퍼퓸 50ML</p>
+              <h6>{perfume[2].title}</h6>
+              <p>{perfume[2].price}</p>
             </Col>
           </Row>
         </Container>
+
+
 
       </div>
     </div>
